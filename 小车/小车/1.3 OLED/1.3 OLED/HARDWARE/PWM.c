@@ -15,18 +15,20 @@ void PWM_Init(void)
 	
 	                      
 
-	TIM_InternalClockConfig(TIM2);
+	//TIM_InternalClockConfig(TIM2);
 	
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseStructInit(&TIM_TimeBaseInitStructure);
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;				//ARR
 	TIM_TimeBaseInitStructure.TIM_Prescaler = 720 - 1;			//PSC
-	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;
+	//TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;
+	TIM_TimeBaseInitStructure.TIM_ClockDivision = 0;
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
 	
-	TIM_OCInitTypeDef TIM_OCInitStructure;
-	TIM_OCStructInit(&TIM_OCInitStructure);
+	TIM_OCInitTypeDef TIM_OCInitStructure;       //初始化输出比较
+	//TIM_OCStructInit(&TIM_OCInitStructure);
 	TIM_OCInitStructure.TIM_OCMode=TIM_OCMode_PWM1;
 	TIM_OCInitStructure.TIM_OCPolarity=TIM_OCPolarity_High;
 	TIM_OCInitStructure.TIM_OutputState=TIM_OutputState_Enable;
@@ -37,6 +39,14 @@ void PWM_Init(void)
 	TIM_OC3Init(TIM2,&TIM_OCInitStructure);
 	TIM_OC4Init(TIM2,&TIM_OCInitStructure);
 	
+	TIM_OC1PreloadConfig(TIM2,TIM_OCPreload_Enable);
+	TIM_OC2PreloadConfig(TIM2,TIM_OCPreload_Enable);
+	TIM_OC3PreloadConfig(TIM2,TIM_OCPreload_Enable);      //OC1-OC4装载寄存器使能
+	TIM_OC4PreloadConfig(TIM2,TIM_OCPreload_Enable);		
+	
+	TIM_ARRPreloadConfig(TIM2,ENABLE);      //TIM3在APR上预装载寄存器使能
+
+
 	
 	
 	
