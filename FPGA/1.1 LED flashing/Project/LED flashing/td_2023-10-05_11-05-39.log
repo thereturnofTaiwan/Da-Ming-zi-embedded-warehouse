@@ -1,0 +1,404 @@
+============================================================
+   Tang Dynasty, V4.6.30127
+   Copyright:   Shanghai Anlogic Infotech Co., Ltd.
+                2011 - 2021
+   Executable = E:/anlogic/bin/td.exe
+   Built at =   15:41:01 Apr 16 2021
+   Run by =     FTM
+   Run Date =   Thu Oct  5 11:05:39 2023
+
+   Run on =     FTM
+============================================================
+RUN-1002 : start command "open_project LED flashing.al"
+HDL-1007 : analyze verilog file LED flashing.v
+HDL-8007 ERROR: syntax error near 'flashing' in LED flashing.v(1)
+HDL-1007 : Verilog file 'LED flashing.v' ignored due to errors
+GUI-8384 ERROR: Analyze file(s) failed ...
+RUN-1002 : start command "import_device ef2_4.db -package EF2L45LG144B"
+ARC-1001 : Device Initialization.
+ARC-1001 : ---------------------------------------------------------
+ARC-1001 :       OPTION       |          IO           |   SETTING   
+ARC-1001 : ---------------------------------------------------------
+ARC-1001 :        done        |         P109          |    gpio    
+ARC-1001 :        initn       |         P110          |    gpio    
+ARC-1001 :       jtagen       |         P120          |    gpio    
+ARC-1001 :      programn      |         P119          |  dedicated  
+ARC-1001 :   tdi/tms/tck/tdo  |  P136/P130/P131/P137  |  dedicated  
+ARC-1001 : ---------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+HDL-1007 : analyze verilog file ../../Source/LED flashing.v
+HDL-1007 : analyze verilog file ../../Source/LED flashing.v
+RUN-1002 : start command "elaborate -top led_ctrl"
+HDL-1007 : elaborate module led_ctrl in ../../Source/LED flashing.v(7)
+HDL-1200 : Current top model is led_ctrl
+HDL-1100 : Inferred 0 RAMs.
+HDL-1007 : analyze verilog file ../../Source/LED flashing.v
+RUN-1002 : start command "elaborate -top led_ctrl"
+HDL-1007 : elaborate module led_ctrl in ../../Source/LED flashing.v(7)
+HDL-1200 : Current top model is led_ctrl
+HDL-1100 : Inferred 0 RAMs.
+RUN-1002 : start command "read_adc ../../Source/LED_SHARK.adc"
+RUN-1002 : start command "set_pin_assignment  clk   LOCATION = P28; "
+RUN-1002 : start command "set_pin_assignment  led   LOCATION = P105; "
+RUN-1002 : start command "set_pin_assignment  rst_n   LOCATION = P38; "
+RUN-1002 : start command "optimize_rtl"
+RUN-1001 : Open license file E:/anlogic/license/Anlogic.lic
+SYN-1012 : SanityCheck: Model "led_ctrl"
+SYN-1011 : Flatten model led_ctrl
+SYN-1014 : Optimize round 1
+SYN-1032 : 81/0 useful/useless nets, 56/0 useful/useless insts
+SYN-1019 : Optimized 0 mux instances.
+SYN-1015 : Optimize round 1, 1 better
+SYN-1014 : Optimize round 2
+SYN-1032 : 79/2 useful/useless nets, 54/0 useful/useless insts
+SYN-1019 : Optimized 0 mux instances.
+SYN-1015 : Optimize round 2, 0 better
+RUN-1002 : start command "report_area -file LED flashing_rtl.area"
+RUN-1001 : standard
+***Report Model: led_ctrl***
+
+IO Statistics
+#IO                     3
+  #input                2
+  #output               1
+  #inout                0
+
+Gate Statistics
+#Basic gates           26
+  #and                  0
+  #nand                 0
+  #or                   0
+  #nor                  0
+  #xor                  0
+  #xnor                 0
+  #buf                  0
+  #not                  1
+  #bufif1               0
+  #MX21                 0
+  #FADD                 0
+  #DFF                 25
+  #LATCH                0
+#MACRO_ADD              1
+#MACRO_EQ               1
+#MACRO_MUX             24
+
+RUN-1001 : 
+Report Hierarchy Area:
++-------------------------------------------+
+|Instance |Module   |gates  |seq    |macros |
++-------------------------------------------+
+|top      |led_ctrl |1      |25     |2      |
++-------------------------------------------+
+
+RUN-1002 : start command "export_db LED flashing_rtl.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported flow parameters
+RUN-1002 : start command "optimize_gate -packarea LED flashing_gate.area"
+RUN-1001 : Open license file E:/anlogic/license/Anlogic.lic
+SYN-2001 : Map 3 IOs to PADs
+SYN-2501 : Processed 0 LOGIC_BUF instances.
+SYN-2571 : Optimize after map_dsp, round 1
+SYN-1032 : 82/0 useful/useless nets, 58/0 useful/useless insts
+SYN-2571 : Optimize after map_dsp, round 1, 0 better
+SYN-2501 : Optimize round 1
+SYN-1032 : 121/0 useful/useless nets, 97/0 useful/useless insts
+SYN-2501 : Optimize round 1, 24 better
+SYN-2501 : Optimize round 2
+SYN-1032 : 121/0 useful/useless nets, 97/0 useful/useless insts
+SYN-2501 : Optimize round 2, 0 better
+SYN-2501 : Map 1 macro adder
+SYN-1032 : 146/0 useful/useless nets, 122/0 useful/useless insts
+SYN-3001 : Running gate level optimization.
+SYN-2553 : LUT mapping.
+SYN-2551 : Post mapping optimization.
+SYN-3001 : Logic optimization runtime opt =   0.04 sec, map =   0.00 sec
+SYN-2581 : Mapping with K=5, #lut = 31 (2.52), #lev = 4 (3.54)
+SYN-3001 : Mapper mapped 65 instances into 32 LUTs, name keeping = 81%.
+SYN-1001 : Packing model "led_ctrl" ...
+SYN-4010 : Pack lib has 47 rtl pack models with 19 top pack blocks
+SYN-1014 : Optimize round 1
+SYN-1032 : 112/0 useful/useless nets, 88/0 useful/useless insts
+SYN-1015 : Optimize round 1, 0 better
+SYN-4002 : Packing 25 DFF/LATCH to SEQ ...
+SYN-4009 : Pack 1 carry chain into lslice
+SYN-4007 : Packing 0 adder to BLE ...
+SYN-4008 : Packed 0 adder and 0 SEQ to BLE.
+SYN-4007 : Packing 0 gate4 to BLE ...
+SYN-4008 : Packed 0 gate4 and 0 SEQ to BLE.
+SYN-4012 : Packed 0 FxMUX
+SYN-4007 : Packing 0 MUX to BLE ...
+SYN-4008 : Packed 0 MUX and 0 SEQ to BLE.
+SYN-4007 : Packing 32 LUT to BLE ...
+SYN-4008 : Packed 32 LUT and 25 SEQ to BLE.
+SYN-4003 : Packing 0 remaining SEQ's ...
+SYN-4004 : #0: Packed 0 SEQ (0 nodes)...
+SYN-4005 : Packed 0 SEQ with LUT/SLICE
+SYN-4006 : 7 single LUT's are left
+SYN-4006 : 0 single SEQ's are left
+SYN-4011 : Packing model "led_ctrl" (AL_USER_NORMAL) with 32/45 primitive instances ...
+RUN-1002 : start command "report_area -file LED flashing_gate.area"
+RUN-1001 : standard
+***Report Model: led_ctrl***
+
+IO Statistics
+#IO                     3
+  #input                2
+  #output               1
+  #inout                0
+
+Utilization Statistics
+#lut                   49   out of   4480    1.09%
+#reg                   25   out of   4480    0.56%
+#le                    49
+  #lut only            24   out of     49   48.98%
+  #reg only             0   out of     49    0.00%
+  #lut&reg             25   out of     49   51.02%
+#dsp                    0   out of     15    0.00%
+#bram                   0   out of     12    0.00%
+  #bram9k               0
+  #fifo9k               0
+#bram32k                0   out of      6    0.00%
+#pad                    3   out of    109    2.75%
+  #ireg                 0
+  #oreg                 0
+  #treg                 0
+#pll                    0   out of      1    0.00%
+
+RUN-1001 : 
+Report Hierarchy Area:
++----------------------------------------+
+|Instance |Module   |le    |lut   |seq   |
++----------------------------------------+
+|top      |led_ctrl |49    |49    |25    |
++----------------------------------------+
+
+RUN-1002 : start command "legalize_phy_inst"
+SYN-1011 : Flatten model led_ctrl
+RUN-1002 : start command "export_db LED flashing_gate.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported flow parameters
+RUN-1002 : start command "place"
+RUN-1001 : Open license file E:/anlogic/license/Anlogic.lic
+PHY-3001 : Placer runs in 12 thread(s).
+SYN-4024 : Net "clk_pad" drive clk pins.
+SYN-4025 : Tag rtl::Net clk_pad as clock net
+SYN-4026 : Tagged 1 rtl::Net as clock net
+PHY-1001 : Populate physical database.
+RUN-1001 : There are total 31 instances
+RUN-1001 : 12 mslices, 13 lslices, 3 pads, 0 brams, 0 dsps
+RUN-1001 : There are total 69 nets
+RUN-1001 : 38 nets have 2 pins
+RUN-1001 : 27 nets have [3 - 5] pins
+RUN-1001 : 2 nets have [11 - 20] pins
+RUN-1001 : 2 nets have [21 - 99] pins
+PHY-3001 : Initial placement ...
+PHY-3001 : design contains 29 instances, 25 slices, 1 macros(7 instances)
+PHY-3001 : Start timing update ...
+RUN-1002 : start command "start_timer"
+TMR-5001 WARNING: No sdc constraints found while initiating timer.
+TMR-2505 : Start building timing graph for model led_ctrl.
+TMR-2506 : Build timing graph completely. Port num: 3, tpin num: 221, tnet num: 67, tinst num: 29, tnode num: 275, tedge num: 405.
+TMR-2507 : Eliminate loop in the timing graph, delete 0 tedges.
+TMR-2508 : Levelizing timing graph completed, there are 19 levels in total.
+TMR-2501 : Timing graph initialized successfully.
+TMR-2503 : Start to update net delay, extr mode = 2.
+TMR-2504 : Update delay of 67 nets completely.
+TMR-2502 : Annotate delay completely, extr mode = 2.
+TMR-3002 : No user constraint, initiate default constraint.
+TMR-1501 : Assign derive clock DeriveClock to 28 clock pins, and constraint 54 relative nodes.
+TMR-3005 : Start mapping report constraints, there are 0 constraints in total.
+TMR-3003 : Constraints initiated successfully.
+TMR-3501 : Forward propagation: start to calculate arrival time...
+TMR-3502 : Backward propagation: start to calculate required time...
+TMR-3503 : Timing propagation completes.
+PHY-3001 : End timing update;  0.006337s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+
+PHY-3001 : Global placement ...
+PHY-3001 : Initial: Len = 10480.6
+PHY-3001 : Run with size of 3
+PHY-3001 : Cell area utilization is 1%, beta_incr = 0.993304
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 0
+PHY-3002 : Step(1): len = 6682.5, overlap = 0
+PHY-3002 : Step(2): len = 3715.4, overlap = 0
+PHY-3002 : Step(3): len = 2549.6, overlap = 0
+PHY-3002 : Step(4): len = 1599.1, overlap = 0
+PHY-3002 : Step(5): len = 1067.8, overlap = 0
+PHY-3002 : Step(6): len = 809, overlap = 0
+PHY-3002 : Step(7): len = 667.6, overlap = 0
+PHY-3002 : Step(8): len = 667.6, overlap = 0
+PHY-3002 : Step(9): len = 658.8, overlap = 0
+PHY-3001 : Legalization ...
+PHY-3001 : End legalization;  0.001476s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (1058.6%)
+
+PHY-3001 : Run with size of 3
+PHY-3001 : Cell area utilization is 1%, beta_incr = 0.993304
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 0
+PHY-3002 : Step(10): len = 648.5, overlap = 0
+PHY-3002 : Step(11): len = 648.5, overlap = 0
+PHY-3001 : Run with size of 1
+PHY-3001 : Cell area utilization is 1%, beta_incr = 0.993304
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 7.26793e-06
+PHY-3002 : Step(12): len = 649.2, overlap = 3.25
+PHY-3002 : Step(13): len = 649.2, overlap = 3.25
+PHY-3001 : Legalization ...
+PHY-3001 : End legalization;  0.015115s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (103.4%)
+
+PHY-3001 : Run with size of 1
+PHY-3001 : Cell area utilization is 1%, beta_incr = 0.993304
+PHY-3001 : :::0::: Try harder cell spreading with beta_ = 0.00126998
+PHY-3002 : Step(14): len = 1370.6, overlap = 0.5
+PHY-3002 : Step(15): len = 1368.6, overlap = 1
+PHY-3002 : Step(16): len = 1340.5, overlap = 1
+PHY-3002 : Step(17): len = 1335, overlap = 1.25
+PHY-3002 : Step(18): len = 1328.9, overlap = 1.5
+PHY-3001 : :::1::: Try harder cell spreading with beta_ = 0.00253995
+PHY-3002 : Step(19): len = 1345.4, overlap = 1
+PHY-3002 : Step(20): len = 1341.4, overlap = 1.25
+PHY-3001 : :::2::: Try harder cell spreading with beta_ = 0.00416151
+PHY-3002 : Step(21): len = 1356.6, overlap = 1
+PHY-3002 : Step(22): len = 1364.2, overlap = 1
+PHY-3001 : Legalization ...
+PHY-3001 : End legalization;  0.001925s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+
+PHY-3001 : Legalized: Len = 1490.6, Over = 0
+PHY-3001 : Final: Len = 1490.6, Over = 0
+RUN-1003 : finish command "place" in  1.593285s wall, 1.156250s user + 1.171875s system = 2.328125s CPU (146.1%)
+
+RUN-1004 : used memory is 170 MB, reserved memory is 125 MB, peak memory is 181 MB
+RUN-1002 : start command "route"
+RUN-1001 : Open license file E:/anlogic/license/Anlogic.lic
+PHY-1001 : Pin misalignment score is improved from 25 to 24
+PHY-1001 : Pin misalignment score is improved from 24 to 24
+PHY-1001 : Route runs in 12 thread(s)
+RUN-1001 : There are total 31 instances
+RUN-1001 : 12 mslices, 13 lslices, 3 pads, 0 brams, 0 dsps
+RUN-1001 : There are total 69 nets
+RUN-1001 : 38 nets have 2 pins
+RUN-1001 : 27 nets have [3 - 5] pins
+RUN-1001 : 2 nets have [11 - 20] pins
+RUN-1001 : 2 nets have [21 - 99] pins
+PHY-1001 : Start global routing ...
+RUN-1001 : Generating global routing grids ...
+PHY-1001 : Generate routing nets ...
+PHY-1001 : Global iterations in 12 thread ...
+PHY-1002 : len = 1952, over cnt = 4(0%), over = 4, worst = 1
+PHY-1002 : len = 2000, over cnt = 0(0%), over = 0, worst = 0
+PHY-1001 : End global iterations;  0.015422s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (101.3%)
+
+PHY-1001 : End global routing;  0.028317s wall, 0.046875s user + 0.000000s system = 0.046875s CPU (165.5%)
+
+PHY-1001 : Start detail routing ...
+PHY-1001 : Generate detailed routing grids ...
+PHY-1001 : Generate nets ...
+PHY-1001 : net clk_pad will be routed on clock mesh
+PHY-1001 : Detail Route ...
+PHY-1001 : ===== Detail Route Phase 1 =====
+PHY-1001 : Routed 1% nets.
+PHY-1002 : len = 464, over cnt = 0(0%), over = 0, worst = 0
+PHY-1001 : End Routed; 0.001421s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+
+PHY-1001 : ===== Detail Route Phase 2 =====
+PHY-1001 : Routed 1% nets.
+PHY-1002 : len = 464, over cnt = 0(0%), over = 0, worst = 0
+PHY-1001 : End Routed; 0.000033s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+
+PHY-1001 : ===== Detail Route Phase 3 =====
+PHY-1001 : Routed 33% nets.
+PHY-1001 : Routed 40% nets.
+PHY-1001 : Routed 52% nets.
+PHY-1001 : Routed 69% nets.
+PHY-1001 : Routed 84% nets.
+PHY-1002 : len = 4496, over cnt = 0(0%), over = 0, worst = 0
+PHY-1003 : Routed, final wirelength = 4496
+PHY-1001 : End Routed; 0.079422s wall, 0.046875s user + 0.046875s system = 0.093750s CPU (118.0%)
+
+PHY-1001 : 0 feed throughs used by 0 nets
+PHY-1001 : Generate detailed routing grids ...
+PHY-1001 : Generate nets ...
+PHY-1001 : net clk_pad will be routed on clock mesh
+PHY-1001 : eco open net = 0
+PHY-1001 : End detail routing;  1.653453s wall, 1.593750s user + 0.171875s system = 1.765625s CPU (106.8%)
+
+PHY-1001 : Routing violations:
+PHY-1001 : End of Routing Violations.
+RUN-1003 : finish command "route" in  1.731381s wall, 1.687500s user + 0.171875s system = 1.859375s CPU (107.4%)
+
+RUN-1004 : used memory is 205 MB, reserved memory is 164 MB, peak memory is 351 MB
+RUN-1002 : start command "report_area -io_info -file LED flashing_phy.area"
+RUN-1001 : standard
+***Report Model: led_ctrl***
+
+IO Statistics
+#IO                     3
+  #input                2
+  #output               1
+  #inout                0
+
+Utilization Statistics
+#lut                   49   out of   4480    1.09%
+#reg                   25   out of   4480    0.56%
+#le                    49
+  #lut only            24   out of     49   48.98%
+  #reg only             0   out of     49    0.00%
+  #lut&reg             25   out of     49   51.02%
+#dsp                    0   out of     15    0.00%
+#bram                   0   out of     12    0.00%
+  #bram9k               0
+  #fifo9k               0
+#bram32k                0   out of      6    0.00%
+#pad                    3   out of    109    2.75%
+  #ireg                 0
+  #oreg                 0
+  #treg                 0
+#pll                    0   out of      1    0.00%
+
+RUN-1001 : 
+
+RUN-1002 : start command "export_db LED flashing_pr.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported flow parameters
+RUN-1002 : start command "bitgen -bit LED flashing.bit -version 0X00 -g ucode:00000000000000000000000000000000"
+BIT-1003 : Start to generate bitstream. 
+BIT-1002 : Init instances with 12 threads.
+BIT-1002 : Init instances completely, inst num: 31
+BIT-1002 : Init pips with 12 threads.
+BIT-1002 : Init pips completely, net num: 69, pip num: 446
+BIT-1003 : Multithreading accelaration with 12 threads.
+BIT-1003 : Generate bitstream completely, there are 100 valid insts, and 1381 bits set as '1'.
+BIT-1004 : Generate bits file LED flashing.bit.

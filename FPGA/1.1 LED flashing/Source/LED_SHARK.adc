@@ -1,0 +1,4 @@
+set_pin_assignment	{ clk }	{ LOCATION = P28; }
+set_pin_assignment	{ led }	{ LOCATION = P105; }
+set_pin_assignment	{ rst_n }	{ LOCATION = P38; }
+

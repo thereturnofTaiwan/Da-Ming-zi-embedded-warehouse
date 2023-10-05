@@ -1,0 +1,34 @@
+standard
+***Report Model: led_ctrl***
+
+IO Statistics
+#IO                     3
+  #input                2
+  #output               1
+  #inout                0
+
+Gate Statistics
+#Basic gates           26
+  #and                  0
+  #nand                 0
+  #or                   0
+  #nor                  0
+  #xor                  0
+  #xnor                 0
+  #buf                  0
+  #not                  1
+  #bufif1               0
+  #MX21                 0
+  #FADD                 0
+  #DFF                 25
+  #LATCH                0
+#MACRO_ADD              1
+#MACRO_EQ               2
+#MACRO_MUX             24
+
+Report Hierarchy Area:
++-------------------------------------------+
+|Instance |Module   |gates  |seq    |macros |
++-------------------------------------------+
+|top      |led_ctrl |1      |25     |3      |
++-------------------------------------------+

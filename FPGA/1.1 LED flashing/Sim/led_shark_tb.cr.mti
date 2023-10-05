@@ -1,0 +1,15 @@
+{E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Source/LED flashing.v} {1 {vlog -work work -vopt -stats=none {E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Source/LED flashing.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module led_ctrl
+
+Top level modules:
+	led_ctrl
+
+} {} {}} {E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim/LED flashingSim.v} {1 {vlog -work work -vopt -stats=none {E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim/LED flashingSim.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module led_ctrl_tb
+
+Top level modules:
+	led_ctrl_tb
+
+} {} {}}

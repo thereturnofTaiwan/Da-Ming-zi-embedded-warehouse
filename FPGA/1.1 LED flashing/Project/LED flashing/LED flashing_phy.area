@@ -1,0 +1,35 @@
+standard
+***Report Model: led_ctrl***
+
+IO Statistics
+#IO                     3
+  #input                2
+  #output               1
+  #inout                0
+
+Utilization Statistics
+#lut                   58   out of   4480    1.29%
+#reg                   25   out of   4480    0.56%
+#le                    58
+  #lut only            33   out of     58   56.90%
+  #reg only             0   out of     58    0.00%
+  #lut&reg             25   out of     58   43.10%
+#dsp                    0   out of     15    0.00%
+#bram                   0   out of     12    0.00%
+  #bram9k               0
+  #fifo9k               0
+#bram32k                0   out of      6    0.00%
+#pad                    3   out of    109    2.75%
+  #ireg                 0
+  #oreg                 0
+  #treg                 0
+#pll                    0   out of      1    0.00%
+
+
+Detailed IO Report
+
+Name      Direction     Location     IOStandard     DriveStrength     PullType     PackReg                  
+clk       INPUT         P28          LVCMOS25       N/A               PULLUP       NONE                     
+rst_n     INPUT         P38          LVCMOS25       N/A               PULLUP       NONE                     
+led       OUTPUT        P105         LVCMOS25       16                NONE         NONE                     
+

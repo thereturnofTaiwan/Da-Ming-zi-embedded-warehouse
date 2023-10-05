@@ -1,0 +1,48 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/anlogic project
+vled_ctrl
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ]c?8i;eDXQ78h_P0fK9:`0
+I>1h3jU6:5a]zTPj`JT>oD2
+Z1 dE:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim
+w1696519696
+8E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Source/LED flashing.v
+FE:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Source/LED flashing.v
+L0 7
+Z2 OL;L;10.4;61
+!s108 1696519733.474000
+!s107 E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Source/LED flashing.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Source/LED flashing.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vled_ctrl_tb
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 BmK7i9c_R_J1]CYRn<Gal0
+Iz9@iHUHCYjlW1g7`HM5cQ1
+R1
+w1696519611
+8E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim/LED flashingSim.v
+FE:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim/LED flashingSim.v
+L0 6
+R2
+!s108 1696519733.420000
+!s107 E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim/LED flashingSim.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/git module source tree/Da-Ming-zi-embedded-warehouse/FPGA/1.1 LED flashing/Sim/LED flashingSim.v|
+!i113 0
+R3

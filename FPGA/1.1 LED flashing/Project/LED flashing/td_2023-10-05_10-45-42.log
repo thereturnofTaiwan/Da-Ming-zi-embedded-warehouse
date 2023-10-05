@@ -1,0 +1,25 @@
+============================================================
+   Tang Dynasty, V4.6.30127
+   Copyright:   Shanghai Anlogic Infotech Co., Ltd.
+                2011 - 2021
+   Executable = E:/anlogic/bin/td.exe
+   Built at =   15:41:01 Apr 16 2021
+   Run by =     FTM
+   Run Date =   Thu Oct  5 10:45:42 2023
+
+   Run on =     FTM
+============================================================
+ARC-1001 : Device Initialization.
+ARC-1001 : ---------------------------------------------------------
+ARC-1001 :       OPTION       |          IO           |   SETTING   
+ARC-1001 : ---------------------------------------------------------
+ARC-1001 :        done        |         P109          |    gpio    
+ARC-1001 :        initn       |         P110          |    gpio    
+ARC-1001 :       jtagen       |         P120          |    gpio    
+ARC-1001 :      programn      |         P119          |  dedicated  
+ARC-1001 :   tdi/tms/tck/tdo  |  P136/P130/P131/P137  |  dedicated  
+ARC-1001 : ---------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+HDL-1007 : analyze verilog file LED flashing.v
+HDL-8007 ERROR: syntax error near 'flashing' in LED flashing.v(1)
+HDL-1007 : Verilog file 'LED flashing.v' ignored due to errors
