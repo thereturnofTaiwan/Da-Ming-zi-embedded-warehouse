@@ -11,3 +11,23 @@
 *.map
 *.lst
 FPGA/1.1 LED flashing/Project/LED flashing/td_2023-10-06_15-48-58.log
+FPGA/1.1 LED flashing/Project/LED flashing/td_2023-10-08_12-39-01.log
+*.lastbuildstate
+*.tlog
+*.txt
+*.pdb
+*.log
+*.sln
+*.vcxproj
+*.filters
+*.user
+*.vsidx
+*.lock
+*.suo
+*.db
+*.ipch
+*.obj
+*.idb
+*.exe
+*.recipe
+*.ilk
