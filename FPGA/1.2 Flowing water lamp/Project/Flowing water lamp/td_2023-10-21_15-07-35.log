@@ -1,0 +1,24 @@
+============================================================
+   Tang Dynasty, V4.6.30127
+   Copyright:   Shanghai Anlogic Infotech Co., Ltd.
+                2011 - 2021
+   Executable = E:/anlogic/bin/td.exe
+   Built at =   15:41:01 Apr 16 2021
+   Run by =     FTM
+   Run Date =   Sat Oct 21 15:07:35 2023
+
+   Run on =     FTM
+============================================================
+RUN-1002 : start command "open_project Flowing water lamp.al"
+RUN-1002 : start command "import_device ef2_4.db -package EF2L45LG144B"
+ARC-1001 : Device Initialization.
+ARC-1001 : ---------------------------------------------------------
+ARC-1001 :       OPTION       |          IO           |   SETTING   
+ARC-1001 : ---------------------------------------------------------
+ARC-1001 :        done        |         P109          |    gpio    
+ARC-1001 :        initn       |         P110          |    gpio    
+ARC-1001 :       jtagen       |         P120          |    gpio    
+ARC-1001 :      programn      |         P119          |  dedicated  
+ARC-1001 :   tdi/tms/tck/tdo  |  P136/P130/P131/P137  |  dedicated  
+ARC-1001 : ---------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
