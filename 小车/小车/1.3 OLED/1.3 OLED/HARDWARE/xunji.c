@@ -168,8 +168,13 @@ u8 a=100;  //a为直走速度
 void Straight(void)
 {
 	Motor1_SetSpeed(50);// 1
+<<<<<<< HEAD
 	Motor2_SetSpeed(50);// 2
 	Motor3_SetSpeed(50);//3
+=======
+	Motor2_SetSpeed(60);// 2
+	Motor3_SetSpeed(70);//3
+>>>>>>> ftm
 	Motor4_SetSpeed(50);//4
 }
 
