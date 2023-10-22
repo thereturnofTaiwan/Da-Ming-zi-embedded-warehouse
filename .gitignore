@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/FileContentIndex/66b747c2-631e-4be8-b73b-1f613e99d857.vsidx
 C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/FileContentIndex/8ab45ac0-3b0d-48b9-9969-39fa81599d4e.vsidx
 C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/FileContentIndex/e0fa160f-a802-418c-86d0-c369be496bb0.vsidx
@@ -8,3 +9,43 @@ C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/Browse.VC.
 C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/Browse.VC.db-wal
 C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/Browse.VC.opendb
 C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/ipch/AutoPCH/d3ca50807325377d/1.13.ipch
+=======
+*.crf
+*.d
+*.o
+*.iex
+*.axf
+*.htm
+*.lnp
+*.sct
+*.dep
+*.FTM
+*.map
+*.lst
+FPGA/1.1 LED flashing/Project/LED flashing/td_2023-10-06_15-48-58.log
+FPGA/1.1 LED flashing/Project/LED flashing/td_2023-10-08_12-39-01.log
+*.lastbuildstate
+*.tlog
+*.txt
+*.pdb
+*.log
+*.sln
+*.vcxproj
+*.filters
+*.user
+*.vsidx
+*.lock
+*.suo
+*.db
+*.ipch
+*.obj
+*.idb
+*.exe
+*.recipe
+*.ilk
+FPGA/1.1 LED flashing/Project/LED flashing/.LED flashing.al.bak
+FPGA/1.2 Flowing water lamp/Project/Flowing water lamp/Flowing water lamp.al
+C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/Browse.VC.opendb
+C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/Browse.VC.db-wal
+C语言/C primer plus/C primer plus topic/.vs/C primer plus topic/v17/Browse.VC.db-shm
+>>>>>>> 42722023972602f64e2f91b37b2db54e2e54ee5c
