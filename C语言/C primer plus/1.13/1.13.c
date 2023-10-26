@@ -1,5 +1,5 @@
 ﻿
-#define _CRT_SECURE_NO_WARNINGS 1
+//#define _CRT_SECURE_NO_WARNINGS 1
 
 /*
 *你刚被无锡信捷电气股份有限公司聘用。该公司准备进入欧洲市场，
@@ -8,6 +8,7 @@
 * 预编译  ----编译-----汇编-------链接    （完整的编译过程）
 * 
 */
+
 #include<stdio.h>
 double inch;
 double cm;

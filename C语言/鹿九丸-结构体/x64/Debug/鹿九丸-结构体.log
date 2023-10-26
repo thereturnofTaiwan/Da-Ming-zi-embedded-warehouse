@@ -1,8 +1,1 @@
-﻿  struct02.c
-E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\struct02.c(176,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
-E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\struct02.c(176,9): message : 请考虑在格式字符串中使用“%zd”
-E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\struct02.c(177,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
-E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\struct02.c(177,9): message : 请考虑在格式字符串中使用“%zd”
-E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\struct02.c(178,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
-E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\struct02.c(178,9): message : 请考虑在格式字符串中使用“%zd”
-  鹿九丸-结构体.vcxproj -> E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\x64\Debug\鹿九丸-结构体.exe
+﻿  鹿九丸-结构体.vcxproj -> E:\git module source tree\Da-Ming-zi-embedded-warehouse\C语言\鹿九丸-结构体\x64\Debug\鹿九丸-结构体.exe
