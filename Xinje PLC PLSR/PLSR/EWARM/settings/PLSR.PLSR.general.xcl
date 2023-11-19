@@ -1,0 +1,15 @@
+"E:\IAR 8.4\arm\bin\armproc.dll" 
+
+"E:\IAR 8.4\arm\bin\armstlink2.dll" 
+
+"E:\git module source tree\Da-Ming-zi-embedded-warehouse\Xinje PLC PLSR\PLSR\EWARM\PLSR\Exe\PLSR.out" 
+
+--plugin="E:\IAR 8.4\arm\bin\armbat.dll" 
+
+--device_macro="E:\IAR 8.4\arm\config\debugger\ST\STM32F4xx.dmac" 
+
+--flash_loader="E:\IAR 8.4\arm\config\flashloader\ST\FlashSTM32F4xxx.board" 
+
+
+
+
