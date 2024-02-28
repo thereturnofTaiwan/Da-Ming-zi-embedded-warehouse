@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -35,8 +36,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 //START 任务
-//设置任务优先��?
-#define START_TASK_PRIO (10)  //��?始的任务优先级设置为��?��?
+//设置任务优先级
+#define START_TASK_PRIO (20)  //开始的任务优先级设置为最低?
 //设置任务堆栈大小
 #define START_STK_SIZE (256)
 //任务堆栈
@@ -45,8 +46,8 @@ OS_STK START_TASK_STK[START_STK_SIZE];
 void start_task(void *pdata);
 
 //LED1 任务
-//设置任务优先��?
-#define LED1_TASK_PRIO (9)  
+//设置任务优先级
+#define LED1_TASK_PRIO (19)  
 //设置任务堆栈大小
 #define LED1_STK_SIZE (256)
 //任务堆栈
@@ -55,8 +56,8 @@ OS_STK LED1_TASK_STK[LED1_STK_SIZE];
 void led1_task(void *pdata);
 
 //LED2 任务
-//设置任务优先��?
-#define LED2_TASK_PRIO (8)  
+//设置任务优先级
+#define LED2_TASK_PRIO (18)  
 //设置任务堆栈大小
 #define LED2_STK_SIZE (256)
 //任务堆栈
@@ -65,14 +66,16 @@ OS_STK LED2_TASK_STK[LED2_STK_SIZE];
 void led2_task(void *pdata);
 
 //脉冲任务
-//设置任务优先��?
-#define PULSE_TASK_PRIO (7)  
+//设置任务优先级
+#define PULSE_TASK_PRIO (17)  
 //设置任务堆栈大小
 #define PULSE_STK_SIZE (256)
 //任务堆栈
 OS_STK PULSE_TASK_STK[PULSE_STK_SIZE];
 //任务函数
 void pulse_task(void *pdata);
+
+
 
 /* USER CODE END PD */
 
@@ -85,6 +88,7 @@ void pulse_task(void *pdata);
 
 /* USER CODE BEGIN PV */
 
+INT32S pulse_num;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -126,15 +130,16 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_TIM9_Init();
   MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
   OSInit();
-  OSTaskCreate(start_task,(void *)0,(OS_STK *)&START_TASK_STK[START_STK_SIZE-1],START_TASK_PRIO );//创建起始任务
-	OSTaskCreate(led1_task,(void *)0,(OS_STK *)&LED1_TASK_STK[LED1_STK_SIZE-1],LED1_TASK_PRIO );//创建LED1任务
-  OSTaskCreate(led2_task,(void *)0,(OS_STK *)&LED2_TASK_STK[LED2_STK_SIZE-1],LED2_TASK_PRIO );//创建LED2任务
-  OSTaskCreate(pulse_task,(void *)0,(OS_STK *)&PULSE_TASK_STK[PULSE_STK_SIZE-1],PULSE_TASK_PRIO );
+  OSTaskCreate(start_task,(void *)0,(OS_STK *)&START_TASK_STK[START_STK_SIZE-1],START_TASK_PRIO );      //创建起始任务
+	OSTaskCreate(led1_task,(void *)0,(OS_STK *)&LED1_TASK_STK[LED1_STK_SIZE-1],LED1_TASK_PRIO );          //创建LED1任务
+  OSTaskCreate(led2_task,(void *)0,(OS_STK *)&LED2_TASK_STK[LED2_STK_SIZE-1],LED2_TASK_PRIO );          //创建LED2任务
+  OSTaskCreate(pulse_task,(void *)0,(OS_STK *)&PULSE_TASK_STK[PULSE_STK_SIZE-1],PULSE_TASK_PRIO );      //创建脉冲任务
   OSStart();
   /* USER CODE END 2 */
 
@@ -195,17 +200,17 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-//��?始任��?
+//起始任务
 void start_task(void *pdata)
 {
   OS_CPU_SR cpu_sr=0;
 	pdata = pdata; 
-  OS_ENTER_CRITICAL();			//进入临界段，无法被中断打��?   
+  OS_ENTER_CRITICAL();			//进入临界段，无法被中断打�?   
  	OSTaskCreate(led1_task,(void *)0,(OS_STK*)&LED1_TASK_STK[LED1_STK_SIZE-1],LED1_TASK_PRIO);						   
  	OSTaskCreate(led2_task,(void *)0,(OS_STK*)&LED2_TASK_STK[LED2_STK_SIZE-1],LED2_TASK_PRIO);
   OSTaskCreate(pulse_task,(void*)0,(OS_STK*)&PULSE_TASK_STK[PULSE_STK_SIZE-1],PULSE_TASK_PRIO); 				   
-	OSTaskSuspend(START_TASK_PRIO);	//挂起起始任务��?
-	OS_EXIT_CRITICAL();				//��?出临界段，可以被中断打断
+	OSTaskSuspend(START_TASK_PRIO);	//挂起起始任务
+	OS_EXIT_CRITICAL();				//�?出临界段，可以被中断打断
 }
 
 //LED1任务
@@ -238,10 +243,13 @@ void pulse_task(void *pdata)
 {
   while(1)
   {
-      Generate_PWM(500);
-      OSTimeDly(1000); 
+      Generate_PWM(pulse_num);
+      OSTaskDel(PULSE_TASK_PRIO);
+      OSTimeDly(1); 
   }
 }
+
+
 
 /* USER CODE END 4 */
 

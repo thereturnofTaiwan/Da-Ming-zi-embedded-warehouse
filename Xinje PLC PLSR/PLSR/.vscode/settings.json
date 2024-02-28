@@ -3,6 +3,7 @@
         "stm32f4xx_hal.h": "c",
         "stm32f4xx_hal_conf.h": "c",
         "tim.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "usart.h": "c"
     }
 }
