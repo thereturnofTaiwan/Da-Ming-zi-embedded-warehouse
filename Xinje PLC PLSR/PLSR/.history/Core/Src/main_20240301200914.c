@@ -220,7 +220,7 @@ void start_task(void *pdata)
   OSTaskCreate(pulse_task,(void*)0,(OS_STK*)&PULSE_TASK_STK[PULSE_STK_SIZE-1],PULSE_TASK_PRIO);
   OSTaskCreate(serial_task,(void*)0,(OS_STK*)&Serial_TASK_STK[Serial_STK_SIZE-1],Serial_TASK_PRIO);  				   
 	OSTaskSuspend(START_TASK_PRIO);	//挂起起始任务
-	OS_EXIT_CRITICAL();				//退出临界段，可以被中断打断
+	OS_EXIT_CRITICAL();				//�?出临界段，可以被中断打断
 }
 
 //LED1任务

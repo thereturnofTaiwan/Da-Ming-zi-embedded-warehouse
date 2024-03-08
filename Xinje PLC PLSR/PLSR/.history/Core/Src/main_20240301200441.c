@@ -77,7 +77,7 @@ void pulse_task(void *pdata);
 
 //串口任务
 //设置任务优先级
-#define Serial_TASK_PRIO (16)  
+#define Serial_TASK_PRIO (17)  
 //设置任务堆栈大小
 #define Serial_STK_SIZE (256)
 //任务堆栈
@@ -214,13 +214,12 @@ void start_task(void *pdata)
 {
   OS_CPU_SR cpu_sr=0;
 	pdata = pdata; 
-  OS_ENTER_CRITICAL();			//进入临界段，无法被中断打断
+  OS_ENTER_CRITICAL();			//进入临界段，无法被中断打�?   
  	OSTaskCreate(led1_task,(void *)0,(OS_STK*)&LED1_TASK_STK[LED1_STK_SIZE-1],LED1_TASK_PRIO);						   
  	OSTaskCreate(led2_task,(void *)0,(OS_STK*)&LED2_TASK_STK[LED2_STK_SIZE-1],LED2_TASK_PRIO);
-  OSTaskCreate(pulse_task,(void*)0,(OS_STK*)&PULSE_TASK_STK[PULSE_STK_SIZE-1],PULSE_TASK_PRIO);
-  OSTaskCreate(serial_task,(void*)0,(OS_STK*)&Serial_TASK_STK[Serial_STK_SIZE-1],Serial_TASK_PRIO);  				   
+  OSTaskCreate(pulse_task,(void*)0,(OS_STK*)&PULSE_TASK_STK[PULSE_STK_SIZE-1],PULSE_TASK_PRIO); 				   
 	OSTaskSuspend(START_TASK_PRIO);	//挂起起始任务
-	OS_EXIT_CRITICAL();				//退出临界段，可以被中断打断
+	OS_EXIT_CRITICAL();				//�?出临界段，可以被中断打断
 }
 
 //LED1任务
@@ -255,17 +254,6 @@ void pulse_task(void *pdata)
   {
       Generate_PWM(pulse_num);
       OSTaskDel(PULSE_TASK_PRIO);
-      OSTimeDly(1); 
-  }
-}
-
-
-//串口任务
-void serial_task(void *pdata)
-{
-  while(1)
-  {
-
       OSTimeDly(1); 
   }
 }
